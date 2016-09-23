@@ -1,59 +1,59 @@
 class ExercisesController < OpenReadController
-  before_action :set_example, only: [:update, :destroy]
+  before_action :set_exercise, only: [:update, :destroy]
 
-  # GET /examples
-  # GET /examples.json
+  # GET /exercises
+  # GET /exercises.json
   def index
-    @examples = Example.all
+    @exercises = Exercise.all
 
-    render json: @examples
+    render json: @exercises
   end
 
-  # GET /examples/1
-  # GET /examples/1.json
+  # GET /exercises/1
+  # GET /exercises/1.json
   def show
-    render json: Example.find(params[:id])
+    render json: Exercise.find(params[:id])
   end
 
-  # POST /examples
-  # POST /examples.json
+  # POST /exercises
+  # POST /exercises.json
   def create
-    @example = current_user.examples.build(example_params)
+    @exercise = current_user.exercises.build(exercise_params)
 
-    if @example.save
-      render json: @example, status: :created, location: @example
+    if @exercise.save
+      render json: @exercise, status: :created, location: @exercise
     else
-      render json: @example.errors, status: :unprocessable_entity
+      render json: @exercise.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /examples/1
-  # PATCH/PUT /examples/1.json
+  # PATCH/PUT /exercises/1
+  # PATCH/PUT /exercises/1.json
   def update
-    if @example.update(example_params)
+    if @exercise.update(exercise_params)
       head :no_content
     else
-      render json: @example.errors, status: :unprocessable_entity
+      render json: @exercise.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /examples/1
-  # DELETE /examples/1.json
+  # DELETE /exercises/1
+  # DELETE /exercises/1.json
   def destroy
-    @example.destroy
+    @exercise.destroy
 
     head :no_content
   end
 
-  def set_example
-    @example = current_user.examples.find(params[:id])
+  def set_exercise
+    @exercise = current_user.exercises.find(params[:id])
   end
 
-  def example_params
-    params.require(:example).permit(:text)
+  def exercise_params
+    params.require(:exercise).permit(:category, :duration, :target, :area,
+                                     :description, :weight, :sets, :reps,
+                                     :routine)
   end
 
-  private :set_example, :example_params
-end
-
+  private :set_exercise, :exercise_params
 end
