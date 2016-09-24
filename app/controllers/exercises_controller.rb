@@ -1,4 +1,4 @@
-class ExercisesController < ApplicationController
+class ExercisesController < OpenReadController
   before_action :set_exercise, only: [:update, :destroy]
 
   # GET /exercises
@@ -50,7 +50,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:text)
+    params.require(:exercise).permit(:description, :category)
   end
 
   private :set_exercise, :exercise_params

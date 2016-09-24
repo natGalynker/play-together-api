@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160924065604) do
   create_table "exercises", force: :cascade do |t|
     t.string   "category"
     t.string   "description"
-    t.time     "duration"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

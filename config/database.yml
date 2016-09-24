@@ -1,4 +1,4 @@
-<% project_name = 'play-together-api' %>
+<% project_name = 'play-together-api'%>
 
 default: &default
   adapter: postgresql

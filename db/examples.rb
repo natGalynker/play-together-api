@@ -8,6 +8,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#   exercises = Exercise.create([{category: 'cardio', description: '8 mile jog'}])
 
 # %w(antony jeff matt jason).each do |name|
 #   email = "#{name}@#{name}.com"
