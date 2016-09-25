@@ -50,7 +50,7 @@ class ExercisesController < OpenReadController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:description, :category)
+    params.require(:exercise).permit(:description, :workouts, :duration)
   end
 
   private :set_exercise, :exercise_params
