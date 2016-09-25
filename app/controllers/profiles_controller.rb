@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:update, :destroy]
+  before_action :set_profile, only: [:show, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = current_user.profiles.build(profile_params)
+    @profile = Profile.new(profile_params)
 
     if @profile.save
       render json: @profile, status: :created, location: @profile
@@ -30,6 +30,8 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile = Profile.find(params[:id])
+
     if @profile.update(profile_params)
       head :no_content
     else
@@ -45,13 +47,14 @@ class ProfilesController < ApplicationController
     head :no_content
   end
 
+  private
+
   def set_profile
-    @profile = current_user.profiles.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def profile_params
-    params.require(:profile).permit(:description, :workouts, :duration)
+    params.require(:profile).permit(:userName, :location, :motivation,
+                                    :favorite_exercise)
   end
-
-  private :set_profile, :profile_params
 end
