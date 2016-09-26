@@ -18,7 +18,8 @@ class ExercisesController < OpenReadController
   # POST /exercises
   # POST /exercises.json
   def create
-    @exercise = current_user.exercises.build(exercise_params)
+    # @exercise = current_user.exercises.build(exercise_params)
+    @xercise = exercise.new(exercise_params)
 
     if @exercise.save
       render json: @exercise, status: :created, location: @exercise
@@ -30,6 +31,8 @@ class ExercisesController < OpenReadController
   # PATCH/PUT /exercises/1
   # PATCH/PUT /exercises/1.json
   def update
+    @exercise = Exercise.find(params[:id])
+
     if @exercise.update(exercise_params)
       head :no_content
     else
@@ -46,11 +49,12 @@ class ExercisesController < OpenReadController
   end
 
   def set_exercise
-    @exercise = current_user.exercises.find(params[:id])
+    @exercise = Exercise.find(params[:id])
   end
 
   def exercise_params
-    params.require(:exercise).permit(:description, :workouts, :duration)
+    params.require(:exercise).permit(:category, :name, :description, :duration,
+                                     :profile_id)
   end
 
   private :set_exercise, :exercise_params

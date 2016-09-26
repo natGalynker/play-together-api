@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  # class ProfilesController < OpenReadController
   before_action :set_profile, only: [:show, :update, :destroy]
 
   # GET /profiles
@@ -54,7 +55,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:userName, :location, :motivation,
+    params.require(:profile).permit(:username, :user_id, :location, :motivation,
                                     :favorite_exercise)
   end
 end
