@@ -2,9 +2,15 @@ curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
   --data '{
     "profile": {
-      "userName": "Tanya",
-      "location": "Boston",
-      "motivation": "getting stronger",
-      "favorite_exercise": "bridge"
+      "username": "June",
+      "location": "Miami",
+      "motivation": "gettingtougher",
+      "favorite_exercise": "jogging"
     }
   }'
+
+
+  t.boolean :category, default: false
+  t.string :description
+  t.string :name
+  t.string :duration

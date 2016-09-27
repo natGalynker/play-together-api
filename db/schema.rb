@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 20160926150156) do
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
 
   create_table "exercises", force: :cascade do |t|
-    t.string   "category"
+    t.boolean  "category",    default: false
     t.string   "description"
     t.string   "name"
     t.string   "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "profile_id"
   end
 
