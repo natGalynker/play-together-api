@@ -5,8 +5,3 @@ class ProfileSerializer < ActiveModel::Serializer
   #   object.exercises.pluck(:id)
   # end
 end
-
-
-attributes :id, :category, :description, :category, :name, :description,
-           :duration, :profile_id
-end
