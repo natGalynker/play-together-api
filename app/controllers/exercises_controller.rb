@@ -1,9 +1,10 @@
-class ExercisesController < OpenReadController
-  before_action :set_exercise, only: [:update, :destroy]
+class ExercisesController < ApplicationController
+  before_action :set_exercise, only: [:show, :update, :destroy]
 
   # GET /exercises
   # GET /exercises.json
   def index
+    # @exercises = current_user.exercises
     @exercises = Exercise.all
 
     render json: @exercises
@@ -12,14 +13,13 @@ class ExercisesController < OpenReadController
   # GET /exercises/1
   # GET /exercises/1.json
   def show
-    render json: Exercise.find(params[:id])
+    render json: @exercise
   end
 
   # POST /exercises
   # POST /exercises.json
   def create
-    # @exercise = current_user.exercises.build(exercise_params)
-    @xercise = exercise.new(exercise_params)
+    @exercise = Exercise.new(exercise_params)
 
     if @exercise.save
       render json: @exercise, status: :created, location: @exercise
@@ -48,14 +48,14 @@ class ExercisesController < OpenReadController
     head :no_content
   end
 
+  private
+
   def set_exercise
     @exercise = Exercise.find(params[:id])
   end
 
   def exercise_params
-    params.require(:exercise).permit(:category, :name, :description, :duration,
+    params.require(:exercise).permit(:name, :category, :description, :duration,
                                      :profile_id)
   end
-
-  private :set_exercise, :exercise_params
 end

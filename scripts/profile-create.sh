@@ -10,6 +10,18 @@ curl --include --request POST http://localhost:3000/profiles \
   }'
 
 
+  curl --include --request POST http://localhost:3000/exercises \
+    --header "Content-Type: application/json" \
+    --data '{
+      "exercise": {
+        "category": "June",
+        "description": "Miami",
+        "name": "gettingtougher",
+        "duration": "jogging",
+        
+      }
+    }'
+
   t.boolean :category, default: false
   t.string :description
   t.string :name

@@ -35,3 +35,14 @@ curl --include --request POST http://localhost:3000/sign-in \
             "password": "example"
           }
         }'
+
+        curl --include --request POST http://localhost:3000/exercises \
+  --header "Content-Type: application/json" \
+  --data '{
+    "exercise": {
+      "profile_id": 1,
+      "category": "cardio",
+      "description": "yes",
+      "duration": "miles"
+    }
+  }'
