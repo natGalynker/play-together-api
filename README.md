@@ -22,15 +22,12 @@ version of Rails 4, as well as track `master` branches for `rails-api` and
 
 ## Installation
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
+
+
+1.  Fork and Clone this Repsiotry
+1.  Bundle install dependencies
 1.  Move into the new project and `git init`.
 1.  Install dependencies with `bundle install`.
-1.  Rename your app module in `config/application.rb` (change
-    `RailsApiTemplate`).
-1.  Rename your project database in `config/database.yml` (change
-    `'rails-api-template'`).
 1.  Create a `.env` for sensitive settings (`touch .env`).
 1.  Generate new `development` and `test` secrets (`bundle exec rake secret`).
 1.  Store them in `.env` with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>`
@@ -40,7 +37,7 @@ version of Rails 4, as well as track `master` branches for `rails-api` and
     `https://<github-username>.github.io`).
 1.  Setup your database with `bin/rake db:nuke_pave` or `bundle exec rake
     db:nuke_pave`.
-1.  Run the API server with `bin/rails server` or `bundle exec rails server`.
+1. Set Up your proxy to work with ember locally with bundle exec rails server -p 3000
 
 ## Structure
 
@@ -83,6 +80,7 @@ tests in RSpec to test your API.
 | POST   | `/sign-in`             | `users#signin`    |
 | PATCH  | `/change-password/:id` | `users#changepw`  |
 | DELETE | `/sign-out/:id`        | `users#signout`   |
+
 
 #### POST /sign-up
 
@@ -263,6 +261,29 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
+
+### User Profiles
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/profiles`            |`profiles#create`  |
+| POST   | `/sign-in`             | `profiles#index`  |
+| PATCH  | `/profiles/:id`        | `profiles#update  |
+| DELETE | `/profiles/:id`        | `profiles#destroy`|
+
+
+
+### Exercise Actions
+
+| Verb   | URI Pattern             | Controller#Action |
+|--------|-------------------------|-------------------|
+| POST   | `/exercises`            |`exercises#create` |
+| POST   | `/exercises`            |`exercises#index`  |
+| PATCH  | `/exercises/:id`        |`exercises#update  |
+| DELETE | `/exercises/:id`        |`exercises#destroy`|
+
+
+
 
 ## [License](LICENSE)
 
