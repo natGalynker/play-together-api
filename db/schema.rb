@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20160926150156) do
     t.string   "description"
     t.string   "name"
     t.string   "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "public",      default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "profile_id"
   end
 

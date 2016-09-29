@@ -5,6 +5,7 @@ class CreateExercises < ActiveRecord::Migration
       t.string :description
       t.string :name
       t.string :duration
+      t.boolean :public, default: false
       t.timestamps null: false
     end
   end

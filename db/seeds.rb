@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  profiles =  Profile.create([{ username: 'Tanya', motivation: 'getting Strong',
-                     location: 'boston', favorite_exercise: 'downward-dog' }])
-
-  Exercise.create(name: 'Test', category: 'cardio', description: 'running',
-                                duration: '4 miles')
+# Profile.create([{ username: 'Tanya', motivation: 'getting Strong',
+#                   location: 'boston', favorite_exercise:
+#                   'downward-dog' }])
+#
+# Exercise.create([{name: 'Test', category: 'cardio',
+#                   description: 'running', duration: '4 miles',
+#                   target: 'false'}])

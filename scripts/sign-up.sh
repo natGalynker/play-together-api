@@ -1,11 +1,12 @@
 #!/bin/bash
 
-curl --include --request POST http://localhost:3000/sign-in \
+curl --include --request POST http://localhost:3000/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "work@here.com",
-      "password": "test"
+      "email": "how@low.com",
+      "password": "low,
+      "password_confirmation": "low"
     }
   }'
 
@@ -21,7 +22,7 @@ curl --include --request POST http://localhost:3000/sign-in \
     --header "Content-Type: application/json" \
     --data '{
       "credentials": {
-        "email": "why@me.email",
+        "email": "test@example.email",
         "password": "test123"
       }
     }'
