@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    render json: current_user.profile
+    render json: @profile
   end
 
   # POST /profiles
