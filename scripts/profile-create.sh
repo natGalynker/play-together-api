@@ -1,13 +1,12 @@
-curl --include --request POST http://localhost:3000/exercises \
+curl --include --request POST http://localhost:3000/profiles \
   --header "Content-Type: application/json" \
   --data '{
-    "exercise": {
-      "name": "april",
-      "category": "Whereever",
-      "description": "something awesome",
-      "duration": "climb evererest",
-      "public": "true",
-      "profile_id": "1"
+    "profile": {
+      "username": "april",
+      "location": "Whereever",
+      "motivation": "something awesome",
+      "favorite_exercise": "climb evererest",
+      "user_id": "9"
     }
   }'
 
@@ -15,11 +14,12 @@ curl --include --request POST http://localhost:3000/exercises \
     --header "Content-Type: application/json" \
     --data '{
       "profile": {
-        "username": "buzz",
-        "motivation": "word",
-        "location": "centraol awesome",
-        "favorite_exercise": "climb evererest",
-        "user_id": "1"
+        "category": "circus",
+        "name": "silks",
+        "description": "conditioning sequence",
+        "duration": "1 hour",
+        "public": "true"
+        "profile_id": "12"
       }
     }'
 
@@ -30,7 +30,9 @@ curl --include --request POST http://localhost:3000/exercises \
         "category": "June",
         "description": "Miami",
         "name": "gettingtougher",
-        "duration": "jogging"
+        "duration": "jogging",
+        "public": "true",
+        "profile_id": "12"
       }
     }'
 
@@ -38,10 +40,11 @@ curl --include --request POST http://localhost:3000/exercises \
     --header "Content-Type: application/json" \
     --data '{
       "profile": {
-        "usernamae ": "awesome",
+        "username": "awesome",
         "motivation": "getting strong",
-        "lcoation": "some place",
-        "favorite_exercise": "something"
+        "location": "some place",
+        "favorite_exercise": "something",
+        "user_id": "1"
       }
     }'
 curl --include --request POST http://localhost:3000/exercises \

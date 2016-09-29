@@ -10,12 +10,13 @@ curl --include --request POST http://localhost:3000/sign-up \
     }
   }'
 
-curl --include --request POST http://localhost:3000/sign-in \
+curl --include --request POST http://localhost:3000/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "test@word.email",
-      "password": "word123"
+      "email": "test@this.email",
+      "password": "this",
+      "password_confirmation": "this"
     }
   }'
   curl --include --request POST http://localhost:3000/sign-in \
