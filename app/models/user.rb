@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   include Authentication
   has_many :examples
-  has_many :profiles, inverse_of: :user
+  has_many :profiles
 
-  before_create :build_initial_profile
-
+  # before_create :build_initial_profile
+  #
   # private
   #
   # def build_initial_profile
