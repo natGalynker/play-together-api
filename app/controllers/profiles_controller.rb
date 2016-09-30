@@ -1,11 +1,11 @@
-class ProfilesController < ApplicationController
+class ProfilesController < ProtectedController
   # class ProfilesController < OpenReadController
   before_action :set_profile, only: [:show, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = current_user.profiles
 
     render json: @profiles
   end
@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
+    @profile = current_user.profiles.build(profile_params)
 
     if @profile.save
       render json: @profile, status: :created, location: @profile
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
-    @profile = Profile.find(params[:id])
+    # @profile = current_user.profiles.find(params[:id])
 
     if @profile.update(profile_params)
       head :no_content
