@@ -1,3 +1,4 @@
+#
 class CreateExercises < ActiveRecord::Migration
   def change
     create_table :exercises do |t|

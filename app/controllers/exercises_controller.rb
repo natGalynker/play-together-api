@@ -1,6 +1,6 @@
 #
 # class ExercisesController < ProtectedController
-class ExercisesController <ProtectedController
+class ExercisesController < ProtectedController
   before_action :set_exercise, only: [:update, :destroy, :show]
 
   # GET /exercises/1
